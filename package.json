@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "start:rest": "nodemon rest/server.js",
+    "start:socket": "nodemon socket/server.js",
+    "start:all": "concurrently \"npm run start:rest\" \"npm run start:socket\""
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.8.0",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "crypto-random-string": "^5.0.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-google-storage": "^1.3.0",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.0",
+    "randomstring": "^1.3.0",
+    "redis": "^4.6.13",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  }
+}

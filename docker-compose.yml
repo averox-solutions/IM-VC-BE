@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  main-server:
+    build: 
+      context: .
+      dockerfile: rest/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  socket-server:
+    build:
+      context: .
+      dockerfile: socket/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+volumes:
+  redis-data:
